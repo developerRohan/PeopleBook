@@ -48,3 +48,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'simple_form', '~> 3.5', '>= 3.5.1'
+gem 'devise', '~> 4.4', '>= 4.4.1'
+gem 'net_http_ssl_fix', require: 'net_http_ssl_fix'
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
