@@ -10,7 +10,12 @@
 
   <body>
   	<%= render 'layouts/header' %>
-  	
     <%= yield %>
+    <%= render "shared/alerts" %>
   </body>
 </html>
+<style>
+  .alert{
+    width: 20% ;
+  }
+</style>

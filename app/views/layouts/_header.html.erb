@@ -19,7 +19,8 @@
         <li><a href="#">timeline</a></li>
          <li><a href="#">people</a></li>
          <% if current_user %>
-              <li><a href=""><%= gravatar_tag current_user.email, size: 20 %></a></li>
+             <!--  <li><a href=""><%= gravatar_tag current_user.email, size: 20 %></a></li> -->
+              <li><%= link_to 'profile' , user_path(current_user.user_name) %></li>
               <li><a href="#">Friends</a></li>
               <li><a href="<%= edit_user_registration_path %>">Settings</a></li>
               <li role="separator" class="divider"></li>
