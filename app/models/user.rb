@@ -13,5 +13,16 @@ class User < ApplicationRecord
   def request_friendship(target_user)
   	self.friendships.create(friend: target_user)
   end
-  
+
+  def friend_requests_recieved
+  	self.inverse_friendships.where(state:pending)
+  end
+
+  def friend_requests_sent
+  	self.friendships.where(state:pending)
+  end
+
+  def friends
+  	self.friendships.where(state:active).map(&:friend)+self.friendships.where(state:active).map(&:user)
+  end
 end
