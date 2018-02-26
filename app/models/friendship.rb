@@ -9,6 +9,7 @@ class Friendship < ApplicationRecord
 	def deny_friendship
 		self.destroy
 	end
+	
 	def cancel_friendship
 		self.destroy
 	end

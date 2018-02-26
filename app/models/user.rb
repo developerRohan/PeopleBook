@@ -40,6 +40,10 @@ class User < ApplicationRecord
 				return 'requested'
 			end
 		end
-	end			
+	end	
+  end
+
+  def find_friendship(target_user)
+     Friendship.where(user_id: [self.id,target_user.id],friend_id: [self.id,target_user.id]).first
   end
 end
