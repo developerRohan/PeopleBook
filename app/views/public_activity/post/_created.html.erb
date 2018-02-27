@@ -1,0 +1,5 @@
+<% if activity.trackable %>
+	<p>
+		<small><%= activity.owner.user_name %> has posted something <%= time_ago_in_words(activity.created_at)%> ago</small>
+	</p>
+<% end %>

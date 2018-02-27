@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 	def create
 		@post = current_user.posts.new(post_params)
 		@post.save
+		@post.create_activity key:'post.created' ,owner: @post.user
 		redirect_to user_path(@post.user.user_name) ,notice: 'post was created'
 	end
 
