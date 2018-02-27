@@ -44,3 +44,5 @@ gem "gritter", "1.2.0"
 # this gem will help in attaining polymorphism
 gem 'public_activity', '~> 1.5'
 
+gem 'auto_html'
+
