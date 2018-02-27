@@ -1,8 +1,9 @@
 class Post < ApplicationRecord
 	include PublicActivity::Model
 	belongs_to :user
-	validates_presence_of :content
 	validates_presence_of :user_id
+	validates_presence_of :content
+	
 
 	auto_html_for :content do
 		html_escape

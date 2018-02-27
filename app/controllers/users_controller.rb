@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user! , only:[:index]
 	before_action :set_user , only: [:show]
 
 
@@ -17,11 +17,13 @@ class UsersController < ApplicationController
   end
 
   def show
+    @post = Post.new
+    @posts = @user.posts
     @activities = PublicActivity::Activity.where(owner_id: @user.id)+PublicActivity::Activity.where(recipient_id: @user.id)
   end
 
   private
-
+  
   def set_user
   	@user = User.find_by(user_name: params[:id])
   end
