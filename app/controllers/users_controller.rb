@@ -1,9 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 	before_action :set_user , only: [:show]
-  def show
 
-  end
 
   def index
 	 case params[:people]
@@ -14,8 +12,12 @@ class UsersController < ApplicationController
      when 'requests'
       @users = current_user.friend_requests_recieved.map(&:user)
      else
-      @users = User.all
+      @users = User.all.where.not(id: current_user.id)
     end
+  end
+
+  def show
+    @activities = PublicActivity::Activity.where(owner_id: @user.id)+PublicActivity::Activity.where(recipient_id: @user.id)
   end
 
   private

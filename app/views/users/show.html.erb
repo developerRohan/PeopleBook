@@ -2,6 +2,37 @@
 	<%= render 'users/corousal' %>	
 </div>
 
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					 <%= pluralize(@user.active_friends.size , 'friend') %>
+				</div>
+				<div class="panel-body">
+					<% @user.active_friends.each do |friend| %>
+					<%= link_to friend.user_name , user_path(friend.user_name) %>
+					<% end %>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			
+		</div>
+		<div class="col-md-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					 Recent Activity
+				</div>
+				<div class="panel-body">
+					<%= render_activities(@activities) %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
 <style>
 	.jumbotron{
 		height:20%;

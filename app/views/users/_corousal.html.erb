@@ -1,6 +1,6 @@
 
 <div class='col-md-offset-2 col-md-8 text-center'>
-<h2>HI! <%= current_user.user_name.capitalize %></h2>
+<h2>HI! <%= @user.user_name.capitalize %></h2>
 </div>
 <div class='row'>
 <div class='col col-md-8'>
@@ -63,13 +63,13 @@
  </div>
  <div class="col col-md-4">
 		<h3>
-			age: <%=current_user.age %>
+			age: <%=@user.age %>
 		</h3>
 		<h3>
-			gender: <%=current_user.gender %> 
+			gender: <%=@user.gender %> 
 		</h3>
 		<h3>
-			Who i am: <%=current_user.bio %>
+			Who i am: <%=@user.bio %>
 		</h3>
 	</div>
 </div>                         

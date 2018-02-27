@@ -34,8 +34,13 @@ gem 'devise', '~> 4.4', '>= 4.4.1'
 gem 'net_http_ssl_fix', require: 'net_http_ssl_fix'
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 gem 'gravatarify', '~> 3.0.0'
-gem "gritter", "1.2.0"
+
 
 gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'sass-rails', '>= 3.2'
+gem "gritter", "1.2.0"
+
+# this gem will help in attaining polymorphism
+gem 'public_activity', '~> 1.5'
+
