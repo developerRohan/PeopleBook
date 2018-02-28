@@ -17,7 +17,7 @@
       
       
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">timeline</a></li>
+        <li><%= link_to'timeline',activities_path%></li>
          <li><%= link_to 'people'  , users_path %></li>
          <% if current_user %>
              <!--  <li><a href=""><%= gravatar_tag current_user.email, size: 20 %></a></li> -->
